@@ -1,0 +1,83 @@
+
+<p *ngIf="data.length >0 "></p>
+<table mat-table [dataSource]="data" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+ 
+        The actual rendered columns are set as a property on the row definition" -->
+
+
+        
+   
+          <!-- Name Column -->
+    <ng-container matColumnDef="Name">
+        <th mat-header-cell *matHeaderCellDef> CustomerName </th>
+        <td mat-cell *matCellDef="let element"> {{element.Name}} </td>
+       
+    </ng-container>
+
+    <!-- Date Column -->
+    <ng-container matColumnDef="Date">
+        <th mat-header-cell *matHeaderCellDef> Date </th>
+        <td mat-cell *matCellDef="let element"> {{element.Date}} </td>
+    </ng-container>
+
+
+    <!-- Delivered Column -->
+    <ng-container matColumnDef="Delivered">
+        <th mat-header-cell *matHeaderCellDef> Delivered </th>
+        <td mat-cell *matCellDef="let element"> {{element.Delivered}} </td>
+    </ng-container>
+
+    <!-- EmptyRecieved Column -->
+    <ng-container matColumnDef="EmptyRecived">
+        <th mat-header-cell *matHeaderCellDef> EmptyRecived </th>
+        <td mat-cell *matCellDef="let element"> {{element.EmptyRecived}} </td>
+    </ng-container>
+
+    <!-- Balanced Column -->
+    <ng-container matColumnDef="Balanced">
+        <th mat-header-cell *matHeaderCellDef> Balanced </th>
+        <td mat-cell *matCellDef="let element"> {{element.Balanced}} </td>
+    </ng-container>
+
+    <!-- CashRecived Column -->
+    <ng-container matColumnDef="CashRecived">
+        <th mat-header-cell *matHeaderCellDef> CashRecived </th>
+        <td mat-cell *matCellDef="let element"> {{element.CashRecived}} </td>
+    </ng-container>
+
+    <!--  CashBalanced -->
+    <ng-container matColumnDef="CashBalanced">
+        <th mat-header-cell *matHeaderCellDef> CashBalnced </th>
+        <td mat-cell *matCellDef="let element"> {{element.CashBalanced}} </td>
+
+
+    </ng-container>
+    <!--Update Button-->
+    <ng-container matColumnDef="Update">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="primary"
+                [routerLink]="['/editentry',element._id]">Update</button> </td>
+    </ng-container>
+
+
+    <!--Delete Button-->
+    <ng-container matColumnDef="Delete">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let element"> <button mat-raised-button color="warn"
+                (click)=Delete(element._id)>Delete</button> </td>
+    </ng-container>
+
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+
+
+
+
+
+<p class="info-text mat-body-1" *ngIf="data.length <= 0">No postAdded</p>

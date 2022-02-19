@@ -1,0 +1,97 @@
+<div
+class="bg-image"
+style="
+  background-image: url('assets/water.jpg');
+  height: 950px;
+  
+  
+  background-size: cover; ">
+<div class="bodyground">
+    <div class="faisal">
+        <form #DataEntry="ngForm" (ngSubmit)="onSubmit(DataEntry)">
+            <div class="container contact-form">
+                <h1 class="title">Kansaz Premium Drinking Water</h1>
+                <hr>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <address>D-211 Block 4 Metroville S.I.T.E Karachi </address>
+                        <p>Email:- test@email.com</p>
+                        <p>Phone:- +923458072266</p>
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input name="Name" [ngModel]="data?.Name" type="text" class="form-control" required
+                                #Name="ngModel">
+                            <mat-error *ngIf="Name.invalid">Please enter a valid Name</mat-error>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input name="Date" [ngModel]="data?.Date" type="datetime-local" class="form-control"
+                                required #Date="ngModel">
+                            <mat-error *ngIf="Date.invalid">Please enter a valid Date</mat-error>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Delivered</label>
+                            <input name="Delivered" [ngModel]="data?.Delivered" type="text" class="form-control"
+                                required #Delivered="ngModel">
+                            <mat-error *ngIf="Delivered.invalid">Please enter a valid Text</mat-error>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Empty Recieved</label>
+                            <input name="EmptyRecieved" [ngModel]="data?.EmptyRecived" type="text" class="form-control"
+                                required #EmptyRecieved="ngModel">
+                            <mat-error *ngIf="EmptyRecieved.invalid">Please enter a valid Text</mat-error>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Balanced</label>
+                            <input name="Balanced" [ngModel]="data?.Balanced" type="text" class="form-control" required
+                                #Balanced="ngModel">
+                            <mat-error *ngIf="Balanced.invalid">Please enter a valid Text</mat-error>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label>Cash Recieved</label>
+                            <input name="CashRecieved" [ngModel]="data?.CashRecived" type="text" class="form-control"
+                                required #CashRecieved="ngModel">
+                            <mat-error *ngIf="CashRecieved.invalid">Please enter a valid Text</mat-error>
+
+                        </div>
+
+
+                        <div class="form-group">
+                            <label>Cash Balanced</label>
+                            <input name="CashBalanced" [ngModel]="data?.CashBalanced" type="text" class="form-control"
+                                required #CashBalanced="ngModel">
+                            <mat-error *ngIf="CashBalanced.invalid">Please enter a valid Text</mat-error>
+
+                        </div>
+
+
+
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="submit">Save</button>
+                        </div>
+
+                    </div>
+
+
+
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+</div>
